@@ -1,0 +1,36 @@
+<p><a href="/admin/">&laquo; back</a></p>
+
+<h1>Subjects</h1>
+
+<div>
+    {% for subject in subjects %}
+        <p>
+            {% if subject_id == subject.id %}
+                <form action="/admin/subject/{{ subject.id }}/" method="post">
+                    <input type="text" name="name" value="{{ subject.name }}" size="50"/>
+                    <input type="text" name="tags" value="{{ subject.tags }}" size="15"/>
+                    <input type="text" name="active_from" value="{{ subject.active_from|date:'Y-m-d' }}" size="11"/>
+                    <input type="text" name="active_to" value="{{ subject.active_to|date:'Y-m-d' }}" size="11"/>
+                    <input type="submit" value="SAVE"/>
+                </form>
+            {% else %}
+                {% if subject.is_current %}
+                    <b>{{ subject.name }} --- ends {{ subject.active_to|date:'D, j M' }}</b>
+                {% else %}
+                    {{ subject.name }} --- {{ subject.active_from|date:'D, j M' }} -
+                    {{ subject.active_to|date:'D, j M' }}
+                {% endif %}
+                &nbsp;<a href="/admin/subject/{{ subject.id }}/">edit</a>
+            {% endif %}
+        </p>
+    {% endfor %}
+    <p>
+
+    <form action="/admin/subject/" method="post">
+        <input type="text" name="name" size="50"/>
+        <input type="text" name="tags" size="15"/>
+        <input type="text" name="active_from" value="{{ today }}" size="11"/>
+        <input type="text" name="active_to" value="{{ today_3 }}" size="11"/>
+        <input type="submit" value="ADD"/>
+    </form>
+</div>

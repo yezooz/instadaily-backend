@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>InstaDaily - competitions for Instagram</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" media="screen" type="text/css"/>
+    <!--[if IE 7]>
+	<link href="{{ STATIC_URL }}css/ie7fix.css" rel="stylesheet" type="text{{ STATIC_URL }}css" />
+	<![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}{{ STATIC_URL }}js/scripts.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/jquery.tinycarousel.min.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/scroll.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/cufon-yui.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/custom.font.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/tipsy.js" type="text/javascript"></script>
+    <script src="{{ STATIC_URL }}js/slimbox2.js" type="text/javascript"></script>
+</head>
+<body id="top">
+{% if submitted %}
+    <div style="height: 30px; text-align: center; background-color: #fff; border: 1px solid yellow; font-size: 20px; padding-top: 7px; font-weight: bold; color: #1a1a1a;">
+        {% if submitted == 'fail' %}
+            Sorry, but that email was incorrect.
+        {% else %}
+            Thanks! Expect to hear from us soon!
+        {% endif %}
+        <span style="float: right; font-size: 12px; margin-top: 5px; margin-right: 10px;"><a href="/">close &raquo;</a></span>
+    </div>
+{% endif %}
+
+<div id="background">
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <div class="logo">InstaDaily</div>
+                <a href="http://itunes.apple.com/app/instadaily-competitions-for/id440991529?mt=8">Version 1.0</a>
+            </div>
+            <!--end #logo -->
+            <ul class="nav">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#screens">Screens</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+                {% comment %}
+                    <li><a href="http://blog.instadailyapp.com/">BLOG</a></li>{% endcomment %}
+            </ul>
+        </div>
+        <!--end #header-->
+        <a href="http://itunes.apple.com/app/instadaily-competitions-for/id440991529?mt=8" id="featured"
+           title="Buy from app store">
+            <img src="{{ STATIC_URL }}img/featured/subject_scr.png" alt="Main - Subject Screen"/>
+        </a><!-- end #featured -->
+        <!--Start Home section-->
+        <div id="home" class="section">
+            <div class="box280" style="margin-bottom: 0;">
+                <h2>What is InstaDaily?</h2>
+
+                <p>Looking for more fun ways you can use <b>Instagram</b>? Compete with other Intagrammers around the
+                    world taking pictures <b>based on the same subjects</b>. Gain points and fame. <b>Become the world’s
+                        top Instagram user!</b></p>
+                {# <p><b>Soon in App Store!</b> We're just waiting for Apple to finish review process.</p> #}
+                <a href="http://itunes.apple.com/app/instadaily-competitions-for/id440991529?mt=8"
+                   class="large_button float_left">Get from <span>App Store</span></a>
+                {# <a href="#" class="large_button float_left">Tell a <span>Friend</span></a> #}
+            </div>
+            <!--end .box280-->
+            <div class="box280" style="margin-bottom: 0;">
+                <h2>How does it work?</h2>
+                <!-- <p></p> -->
+                <ul class="list">
+                    <li><b>Subject is changing every 1-3 days</b></li>
+                    <li><b>Post photos using Instagram</b> based on current subject</li>
+                    <li>To <b>add photo to competition</b>, manually add <b>#instadaily hash-tag</b> in caption or
+                        comment of given photo, or <b>use InstaDaily</b> which will do it for you
+                    </li>
+                    <li>Until current subject runs out of time, people can vote on photos. Since it based on Instagram's
+                        'like' feature, we also count votes made outside of InstaDaily app
+                    </li>
+                    <li>Few hours after all votes are summed up and Leaderboards get updated, so you can check what's
+                        your current position
+                    </li>
+                </ul>
+            </div>
+            <!--end .box280-->
+            <div class="box590">
+                <h2>Latest submissions</h2>
+                <!-- start tiny slider-->
+                <div id="tiny-slider">
+                    <div class="viewport">
+                        <ul class="overview">
+                        </ul>
+                    </div>
+                    <a class="buttons prev" href="#">left</a>
+                    <a class="buttons next" href="#">right</a>
+                </div>
+                <!-- end #tiny-slider -->
+                <!-- end tiny slider-->
+            </div>
+            <!--end .box590-->
+        </div>
+        <!--end #home-->
+        <!--End Home Section-->
+        <!--Start Screens section-->
+        <div id="screens" class="section">
+            <div class="box590">
+                <h1>Screens</h1>
+
+                <div class="screens">
+                    {% comment %}
+                        <h2>4 screens</h2>
+                        <ul class="screens_4">
+                            <li><a href="{{ STATIC_URL }}img/screens/screen1.jpg" rel="lightbox_screens_4"
+                                   title="#"><img src="{{ STATIC_URL }}img/screens/screen1thumb_sm.png" alt="#"/></a>
+                            </li>
+                            <li><a href="{{ STATIC_URL }}img/screens/screen2.jpg" rel="lightbox_screens_4"
+                                   title="#"><img src="{{ STATIC_URL }}img/screens/screen2thumb_sm.png" alt="#"/></a>
+                            </li>
+                            <li><a href="{{ STATIC_URL }}img/screens/screen3.jpg" rel="lightbox_screens_4"
+                                   title="#"><img src="{{ STATIC_URL }}img/screens/screen3thumb_sm.png" alt="#"/></a>
+                            </li>
+                            <li class="last"><a href="{{ STATIC_URL }}img/screens/screen4.jpg" rel="lightbox_screens_4"
+                                                title="#"><img src="{{ STATIC_URL }}img/screens/screen4thumb_sm.png"
+                                                               alt="#"/></a></li>
+                        </ul>
+                    {% endcomment %}
+                    <h2>3 screens</h2>
+                    <ul class="screens_3">
+                        <li><a href="{{ STATIC_URL }}img/screens/subject_scr.png" rel="lightbox_screens_3"
+                               title="Current Subject"><img src="{{ STATIC_URL }}img/screens/subject_scr_thumb.png"
+                                                            alt="#"/></a></li>
+                        <li><a href="{{ STATIC_URL }}img/screens/vote_scr.png" rel="lightbox_screens_3"
+                               title="Voting"><img src="{{ STATIC_URL }}img/screens/vote_scr_thumb.png" alt="#"/></a>
+                        </li>
+                        <li class="last"><a href="{{ STATIC_URL }}img/screens/leaderboard_scr.png"
+                                            rel="lightbox_screens_3" title="Leaderboard"><img
+                                src="{{ STATIC_URL }}img/screens/leaderboard_scr_thumb.png" alt="#"/></a></li>
+                    </ul>
+                    {% comment %}
+                        <h2>2 screens</h2>
+                        <ul class="screens_2">
+                            <li><a href="{{ STATIC_URL }}img/screens/screen1.jpg" rel="lightbox_screens_2"
+                                   title="#"><img src="{{ STATIC_URL }}img/screens/screen1thumb_lrg.png" alt="#"/></a>
+                            </li>
+                            <li class="last"><a href="{{ STATIC_URL }}img/screens/screen2.jpg" rel="lightbox_screens_2"
+                                                title="#"><img src="{{ STATIC_URL }}img/screens/screen2thumb_lrg.png"
+                                                               alt="#"/></a></li>
+                        </ul>
+                    {% endcomment %}
+                    </di.screens -->
+                </div>
+                <!--end .box590-->
+            </div>
+            <!--end #screens-->
+            <!--End Screens Section-->
+            <!--Start FAQ section-->
+            <div id="faq" class="section">
+                <div class="box280">
+                    <h1>FAQ</h1>
+
+                    <p>Here is a selection of frequently asked questions we get.</p>
+
+                    <p><em>Click on the title to expand.</em></p>
+
+                    <div class="faqs">
+                        <!--Begin FAQ #1-->
+                        <p class="trigger">How much is this cool app?</p>
+
+                        <div class="toggle_container">
+                            <p class="quote">$1.99</p>
+                        </div>
+                        <!--end .toggle_container -->
+                        <!--Begin FAQ #2-->
+                        <p class="trigger">Do you guys update this often?</p>
+
+                        <div class="toggle_container">
+                            <p>YES</p>
+                        </div>
+                        <!--end .toggle_container -->
+                        <!--Begin FAQ #3-->
+                        <p class="trigger">Does it work on all versions of iPod/iPhone?</p>
+
+                        <div class="toggle_container">
+                            <p>For sure from iOS verion 4, but should be fine also on older versions.</p>
+                        </div>
+                        <!--end .toggle_container -->
+                    </div>
+                    <!--end .faqs-->
+                </div>
+                <!--end .box280-->
+                <div class="box280">
+                    <div class="content_box">
+                        <h2>More questions?</h2>
+
+                        <p>Is your question not listed here? Head on down to our <a href="#contact">Contact</a> section
+                            to find out how you can get in touch with us.</p>
+                        {# <p>By the way, this text is inside a cool little content box!</p> #}
+                    </div>
+                    <!--end .content_box-->
+                </div>
+                <!--end .box280-->
+            </div>
+            <!--end #faq-->
+            <!--End FAQ Section-->
+
+            <!--Start Contact section-->
+            <div id="contact" class="section">
+                <div class="box280">
+                    <h1>Contact</h1>
+                    <!--CONTACT FORM-->
+                    <fieldset class="info_fieldset">
+                        <div id="note"></div>
+                        <form action="/" method="post">
+                            <div class="label">Name</div>
+                            <input class="textbox" type="text" name="contact_name" value="" size="21"/><br/>
+
+                            <div class="label">E-Mail</div>
+                            <input class="textbox" type="text" name="contact_email" value="" size="21"/><br/>
+
+                            <div class="label">Subject</div>
+                            <input class="textbox" type="text" name="contact_subject" value="" size="21"/><br/>
+
+                            <div class="label">Message</div>
+                            <textarea class="textbox" name="contact_message" rows="5" cols="23"></textarea>
+                            <br/>
+
+                            <div class="label"></div>
+                            <input class="button send" type="submit" name="submit" value="Send"/></form>
+                    </fieldset>
+                    <!--END CONTACT FORM-->
+                </div>
+                <!--end .box280-->
+                <div class="box280">
+                    <h2>Other Info</h2>
+                    {% comment %}
+                        <p><strong>Phone:</strong> 0123 4567 891</p>
+                        <p><strong>Mobile:</strong> 01234 567 891</p>
+                    {% endcomment %}
+                    <p><strong>E-mail:</strong> info@instadailyapp.com</p>
+                    {# <p><strong>Address:</strong> 42 Summervale Road, Kent, UK</p> #}
+                    <ul class="social_icons">
+                        <li><a href="http://www.twitter.com/instadaily" class="twitter_icon" title="instadaily">Instadaily</a>
+                        </li>
+                        <li><a href="http://www.facebook.com/pages/InstaDaily/214075705280261" class="facebook_icon"
+                               title="username">Facebook</a></li>
+                        <li><a href="http://www.flickr.com/photos/instadaily/" class="flickr_icon" title="username">Flickr</a>
+                        </li>
+                        <li><a href="http://blog.instadailyapp.com/rss" class="rss_icon" title="Subscribe">RSS</a></li>
+                    </ul>
+                </div>
+                <!--end .box280-->
+                <div class="box590">
+                    <ul id="twitter_update_list">
+                        <li></li>
+                    </ul>
+                </div>
+                <!--end .box590-->
+            </div>
+            <!--end #contact-->
+            <!--End Contact Section-->
+        </div>
+        <!--end #background-->
+    </div>
+    <!--end #container-->
+    <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+    <script type="text/javascript"
+            src="http://twitter.com/statuses/user_timeline/instadaily.json?callback=twitterCallback2&amp;count=1"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-317705-23']);
+        _gaq.push(['_setDomainName', 'none']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+</body>
+</html>
